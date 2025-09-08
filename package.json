@@ -2,7 +2,7 @@
   "name": "randomquotesandfacts",
   "version": "1.0.0",
   "description": "JS Advanced API assignment. using chuck norris API (chuck norris io) and useless facts",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
