@@ -1,7 +1,7 @@
 {
-  "name": "gamedealsusingapis",
+  "name": "randomquotesandfacts",
   "version": "1.0.0",
-  "description": "JS Advanced API assignment. using the CheapShark API to fetch current game deals on the market from various stores",
+  "description": "JS Advanced API assignment. using chuck norris API (chuck norris io) and useless facts",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
