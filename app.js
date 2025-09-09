@@ -45,6 +45,7 @@ const factBtn = document.getElementById("get-fact");
 const CHUCK_NORRIS_URL = "https://api.chucknorris.io/jokes";
 const USELESS_FACTS_URL = "https://uselessfacts.jsph.pl/api/v2/facts";
 
+// for populating the select dropdown with code.
 const chucknorris_category_array = [
   "animal",
   "career",
@@ -67,13 +68,25 @@ const chucknorris_category_array = [
 chuckBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
+  chuckBtn.disabled = true;
+  chuckBtn.textContent = "Please wait...";
   fetchContainer.append(await makeCard("chuck"));
+  setTimeout(() => {
+    chuckBtn.disabled = false;
+    chuckBtn.textContent = "Get Chuck Norris Joke";
+  }, 1000);
 });
 
 factBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
+  factBtn.disabled = true;
+  factBtn.textContent = "Please wait...";
   fetchContainer.append(await makeCard("useless"));
+  setTimeout(() => {
+    factBtn.disabled = false;
+    factBtn.textContent = "Get a Useless Fact";
+  }, 1000);
 });
 
 window.onload = async () => {
@@ -91,7 +104,7 @@ window.onload = async () => {
 };
 
 const makeCard = async (type) => {
-  fetchContainer.replaceChildren();
+  // Remove the previous card
   const cardContainer = document.createElement("article");
   cardContainer.classList.add("card");
   const subtitleText = document.createElement("p");
@@ -134,7 +147,7 @@ const makeCard = async (type) => {
       cardContainer.append(subtitleText, factText, sourceText);
       break;
   }
-
+  fetchContainer.replaceChildren();
   return cardContainer;
 };
 

@@ -52,6 +52,12 @@ form {
 
 button[type="submit"] {
   padding: 1em;
+  width: 15em;
+  border-radius: 10px;
+}
+
+#get-chuck {
+  border: 2px solid hsl(35, 100%, 50%);
 }
 
 .card {
