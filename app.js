@@ -73,7 +73,7 @@ chuckBtn.addEventListener("click", async (e) => {
   fetchContainer.append(await makeCard("chuck"));
   setTimeout(() => {
     chuckBtn.disabled = false;
-    chuckBtn.textContent = "Get Chuck Norris Joke";
+    chuckBtn.textContent = "Get a Chuck Norris Joke";
   }, 1000);
 });
 
@@ -99,20 +99,21 @@ window.onload = async () => {
   });
 
   // add in Today's useless fact by default
-  useless_category_options.value = "today";
+  useless_category_options.value = "today"; // Making sure it fetches from today's random fact
   fetchContainer.append(await makeCard("useless"));
+  useless_category_options.value = "random"; // Set it to random afterwards so the user doesn't have to select it from the dropdown menu to get more facts.
 };
 
 const makeCard = async (type) => {
-  // Remove the previous card
   const cardContainer = document.createElement("article");
   cardContainer.classList.add("card");
+
   const subtitleText = document.createElement("p");
   subtitleText.classList.add("italic");
+
   switch (type) {
     case "chuck":
       const [fetchedJoke, fetchedChuckSource] = await fetchChuckNorris();
-      console.log(chuckNorrisOptionValue);
       subtitleText.textContent = `A ${chuckNorrisOptionValue} Chuck Norris Joke`;
 
       const jokeText = document.createElement("p");
@@ -123,7 +124,7 @@ const makeCard = async (type) => {
       chuckSource.href = fetchedChuckSource;
       chuckSource.setAttribute("target", "_blank");
       chuckSource.textContent = "Source to the joke";
-      if (!fetchedChuckSource) chuckSource.style.display = "none";
+      if (!fetchedChuckSource) chuckSource.style.display = "none"; // No need to display it if there is no url
 
       cardContainer.append(subtitleText, jokeText, chuckSource);
       break;
@@ -147,7 +148,7 @@ const makeCard = async (type) => {
       cardContainer.append(subtitleText, factText, sourceText);
       break;
   }
-  fetchContainer.replaceChildren();
+  fetchContainer.replaceChildren(); // replace children here before returning to make it so the card doesn't disappear while we are fetching a new one.
   return cardContainer;
 };
 
@@ -161,7 +162,7 @@ const fetchChuckNorris = async () => {
       }`
     );
     const resultBody = await response.json();
-    return [resultBody.value, resultBody.url];
+    return [resultBody.value, resultBody.url]; // could probably use map here, but just as easy to go with an array with dot notation due to just 2 values.
   } catch (err) {
     console.log(err);
     return [

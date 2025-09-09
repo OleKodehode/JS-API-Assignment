@@ -57,7 +57,41 @@ button[type="submit"] {
 }
 
 #get-chuck {
-  border: 2px solid hsl(35, 100%, 50%);
+  border: 3px solid hsl(30, 100%, 50%);
+  transition: all 0.3s ease;
+}
+
+#get-chuck:hover {
+  background-color: hsl(0, 1%, 85%);
+  transform: translateY(-1px);
+}
+
+#get-fact {
+  border: 3px solid hsl(295, 100%, 40%);
+  transition: all 0.3s ease;
+}
+
+#get-fact:hover {
+  background-color: hsl(0, 1%, 85%);
+  transform: translateY(-1px);
+}
+
+select {
+  padding: 1em 0.5em;
+}
+
+.form-name {
+  text-align: center;
+}
+
+#chuck-norris-title {
+  color: hsl(30, 100%, 50%);
+  text-shadow: 0 0 20px hsl(0, 50%, 100%);
+}
+
+#useless-facts-title {
+  color: hsl(295, 100%, 40%);
+  text-shadow: 0 0 20px hsl(0, 50%, 100%);
 }
 
 .card {
