@@ -3,20 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Deals [Kodehode JS API Assingment]</title>
+    <title>Jokes & Useless Facts [Kodehode JS API Assingment]</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
+    <header>
+      <h1 id="Title">Chuck Norris Jokes & Other Useless Facts</h1>
+    </header>
+    <section id="forms_container">
+      <form action="" id="chuck-norris-form">
+        <p class="form-name">Chuck Norris Jokes:</p>
+        <select name="chuck-norris-category" id="chuck-norris-category">
+          <option value="random">Random</option></select
+        ><button type="submit" id="get-chuck">Get Chuck Norris Joke</button>
+      </form>
+      <form action="" id="useless-facts-form">
+        <p class="form-name">Useless Facts:</p>
+        <select name="useless-facts-category" id="useless-facts-category">
+          <option value="today">Today's fact</option>
+          <option value="random">Random Fact</option></select
+        ><button type="submit" id="get-fact">Get a Useless Fact</button>
+      </form>
+    </section>
+    <section id="fetch-container"></section>
     <footer>
       <section id="chuck-norris-info">
         <p>
-          Chuck Norris quotes powered by
-          <a href="https://api.chucknorris.io/#!">Chuck Norris IO</a>
+          Chuck Norris jokes powered by
+          <a href="https://api.chucknorris.io/" target="_blank"
+            >Chuck Norris IO</a
+          >
         </p>
       </section>
       <section id="useless-facts-info">
         Useless Facts powered by
-        <a href="https://uselessfacts.jsph.pl">Uselessfacts.jsph</a>
+        <a href="https://uselessfacts.jsph.pl" target="_blank"
+          >Uselessfacts.jsph</a
+        >
       </section>
     </footer>
   </body>

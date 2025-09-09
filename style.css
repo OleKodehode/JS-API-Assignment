@@ -3,3 +3,87 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: hsl(250, 35%, 5%);
+  color: hsl(0, 50%, 100%);
+}
+
+header {
+  display: grid;
+  place-content: center;
+  margin: 2.5svh 0;
+}
+
+section {
+  margin: 5svh 0;
+  gap: 2em;
+}
+
+#forms_container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+form {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1em;
+}
+
+.italic {
+  font-style: italic;
+  font-size: 0.75em;
+}
+
+.bold {
+  font-weight: bold;
+  font-size: 1.25em;
+  line-height: 1.75em;
+}
+
+#fetch-container {
+  display: grid;
+  place-content: center;
+  margin-top: 10svh;
+}
+
+button[type="submit"] {
+  padding: 1em;
+}
+
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2em;
+  text-align: center;
+  max-width: 80svw;
+  max-height: 80svh;
+  background-color: hsl(250, 35%, 20%);
+  padding: 1em 3em;
+  border-radius: 25px;
+}
+
+footer {
+  position: fixed;
+  bottom: 2svh;
+  width: 99svw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+a,
+a:visited,
+a:active {
+  color: white;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: hsl(0, 1%, 70%);
+}
